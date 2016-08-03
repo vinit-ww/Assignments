@@ -1,0 +1,7 @@
+<h1>Hello So You are here:--<h1>
+{%if error_message %}<p><strong>{{error_message}}</strong></p>{%endif%}
+<form action="{%url 'myapp:postman' %}" method="post">
+{%csrf_token%}
+<input type="text" name="yours_name" id+=1 />
+<button type="submit" value="Submit">Submit</button>
+</form>
