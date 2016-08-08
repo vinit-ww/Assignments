@@ -1,0 +1,15 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+{%for i in object_list%}
+
+<a href="{{i.get_absolute_url}}">{{i.title}}</a>	
+{{i.content}}</br>
+{{i.id}}</br>
+{{i.timestamp}}</br>
+{{i.updated}}</br>
+{%endfor%}
+</body>
+</html>
