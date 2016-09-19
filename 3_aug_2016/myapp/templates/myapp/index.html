@@ -1,0 +1,9 @@
+<ol>
+  {% for name_key in some_index %}
+    <li>id is:: {{name_key.id }} The name is  {{name_key.some_key}}</li>
+    <!--<li> 2.please refer to the link for further details:== <a href="/">My_Details</a></li>-->
+
+    <li>  please refer to the link for further details:-- <a href="{% url 'myapp:detail' %}">My_Details</a></l>
+  {% endfor %}
+
+</ol>

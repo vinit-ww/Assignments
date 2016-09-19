@@ -1,0 +1,7 @@
+import re
+for test_str in ['+91-8057938097']:
+    if re.match( r^`\+d{2}-\d{10}$` , test_str):
+	print "Matched "
+    else
+	print "Rejected"
+	
