@@ -1,0 +1,35 @@
+{%for img in product_images%}
+{%if img.product_id.brands.id == brand.id%}
+ <div class="col-sm-4">
+              <div class="product-image-wrapper">
+                  <div class="single-products">
+                      <div class="productinfo text-center">
+                          <img src="{{img.image.url}}" alt="{{img.name}}" height="200px" width="200px"/>
+                          {%if img.product_id.status%}
+                          <h2>Availabe</h2>
+                          {%else%}
+                          <h2>UnAvailabe</h2>
+                          {%endif%}
+                          <p>{{img.product_id.name}}</p>
+                           </div>
+                      <div class="product-overlay">
+                          <div class="overlay-content">
+                              {%if img.product_id.status%}
+                              <h2>Availabe</h2>
+                              {%endif%}
+                              <p>{{img.product_id.name}}</p>
+                              <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to
+                                  cart</a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="choose">
+                      <ul class="nav nav-pills nav-justified">
+                          <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+                          <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+    {%endif%}
+    {%endfor%}

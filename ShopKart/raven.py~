@@ -1,0 +1,9 @@
+import raven
+
+RAVEN_CONFIG = {
+    'dsn': 'https://56d87c426053424aa7187eb56389fa52:13423ebe56a747c38a44deceedc1e041@sentry.io/99507',
+    # If you are using git, you can also automatically configure the
+    # release based on the git info.
+    'release': raven.fetch_git_sha(os.path.dirname(__file__)),
+}
+
