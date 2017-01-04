@@ -1,0 +1,68 @@
+<div id="feature">
+    {%extends 'shopify/base.html'%}
+    {%block content%}
+    <section id="cart_items">
+        <div class="container">
+            <div class="breadcrumbs">
+                <ol class="breadcrumb">
+                    <li><a href="{%url 'shopify:index'%}">Home</a></li>
+                    <li class="active">Shopping Cart</li>
+                </ol>
+            </div>
+            <div class="table-responsive cart_info">
+                <table class="table table-condensed">
+                    <thead>
+                    <tr class="cart_menu">
+                        <td class="image">Item</td>
+                        <td class="description"></td>
+                        <td class="price">Price</td>
+                        <td class="quantity">Quantity</td>
+                        <td class="total">Total</td>
+                        <td></td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {%for i in cart%}
+
+                    <tr>
+                        <td class="cart_product">
+
+                            <a href="#"><img src="{{i.image}}" height="320px" width="320px" alt="{{i.product}}"></a>
+                        </td>
+                        <td class="cart_description">
+                            <h4>{{i.product}}<br></h4>
+                            <!-- <p>Web ID: 1089772</p> -->
+                        </td>
+                        <td class="cart_price">
+                            ${{i.price}}
+                            <!-- <p>$59</p> -->
+                        </td>
+                        <td class="cart_quantity">
+                            <div class="cart_quantity_button"  >
+                                <a class="cart_quantity_up"  href="#" data-cart_add="{{i.product.id}}"> + </a>
+                                <input class="cart_quantity_input" type="text" name="quantity" value="{{i.quantity}}" autocomplete="off" size="2">
+                                <a class="cart_quantity_down" href="#" data-cart_remove="{{i.product.id}}"> - </a><br><hr>
+                            </div>
+                        </td>
+                        <td class="cart_total">
+                            ${{i.total_price}}
+                            <!-- <p class="cart_total_price">$59</p> -->
+                        </td>
+                        <td class="cart_delete">
+                            <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+                        </td>
+                    </tr>
+                    {%endfor%}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+{%include 'shopify/cart.js'%}
+</script>
+    {%endblock content%}
+</div>

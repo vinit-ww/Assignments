@@ -1,0 +1,1 @@
+web: gunicorn ShopKart.wsgi --log-file -

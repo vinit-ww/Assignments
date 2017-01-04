@@ -1,0 +1,222 @@
+
+								TUITORIAL ONE:
+
+ls (short for list)
+
+The ls command lists the contents of your current working directory.
+
+ls -a
+
+mkdir (make directory) 
+
+
+cd (change directory)
+
+In UNIX, (.) means the current directory
+
+cd .. 
+
+pwd (print working directory)
+
+
+Home directories can also be referred to by the tilde ~ character
+
+ls ~/unixstuff
+
+ls ~
+
+current files in a directory
+
+ls ~.. 
+
+current users
+
+
+
+____________________________________________________________________________________________________________________________________________
+
+
+								TUITORIAL TWO:
+
+copying files:
+
+cp (copy)
+
+cp file1 file2 is the command which makes a copy of file1 in the current working directory and calls it file2 
+
+
+mv (move)
+
+mv file1 file2 moves (or renames) file1 to file2
+
+To move a file from one place to another, use the mv command. This has the effect of moving rather than copying the file, so you end up with only one file rather than two. 
+
+
+rm (remove), rmdir (remove directory)
+
+
+clear (clear screen)
+
+cat (concatenate)
+
+The command cat can be used to display the contents of a file on the screen. Type:
+
+% cat science.txt 
+
+less
+
+The command less writes the contents of a file onto the screen a page at a time. Type
+
+% less science.txt 
+
+tail
+
+The command less writes the contents of a file onto the screen a page at a time. Type
+
+% tail science.txt 
+
+head
+The command less writes the contents of a file onto the screen a page at a time. Type
+
+% head science.txt 
+
+Simple searching using less  :
+
+ % less science.txt
+
+then, still in less (i.e. don't press [q] to quit), type a forward slash [/] followed by the word to search
+
+/science
+
+
+grep : searching
+
+-v display those lines that do NOT match
+-n precede each maching line with the line number
+-c print only the total count of matched lines 
+
+
+wc (word count)
+
+A handy little utility is the wc command, short for word count. 
+
+
+
+___________________________________________________________________________________________________________________________________________
+
+
+
+							TUITORIAL THREE:
+
+
+
+
+We use the > symbol to redirect the output of a command.
+
+We use the < symbol to redirect the input of a command.
+
+
+sort
+
+who is the user.
+
+_________________________________________________________________________________________________________________________________________
+
+
+							TUITORIAL FOUR:
+
+The characters * and ?
+
+The character * is called a wildcard, and will match against none or more character(s) in a file (or directory) name.The character ? will match exactly one character.
+
+to find out more about the wc (word count) command, type
+
+% man wc 
+
+ Alternatively
+
+% whatis wc
+
+gives a one-line description of the command, but omits any information about options etc. 
+
+When you are not sure of the exact name of a command,
+
+% apropos keyword 
+
+____________________________________________________________________________________________________________________________________________
+
+
+
+							     TUITORIAL FIVE:
+	
+
+ls -lag 		list access rights for all files
+chmod [options] 	file 	change access rights for named file		 ex:% chmod go-rwx biglist,% chmod a+rw biglist  
+command &	 	run command in background
+^C 			kill the job running in the foreground
+^Z 			suspend the job running in the foreground
+bg 			background the suspended job
+jobs 			list current jobs
+fg %1 			foreground job number 1
+kill %1 		kill job number 1
+ps 			list current processes
+kill 26152 		kill process number 26152
+
+Running background processes : & , bg , fg
+
+
+______________________________________________________________________________________________________________________________________________
+
+						
+							 TUITORIAL SIX:
+
+df
+
+The df command reports on the space left on the file system
+
+du
+
+number of kilobytes used by each directory.
+
+compress
+
+% ls -l science.txt 
+
+ % compress science.txt 
+This will compress the file and place it in a file called science.txt.Z 
+uncompress
+
+gzip
+gunzip
+
+
+_______________________________________________________________________________________________________________________________________________
+
+
+
+							 TUITORIAL EIGHT:
+
+
+ Environment Variables
+
+% echo $OSTYPE 
+
+
+.login is to set conditions which will apply to the whole session and to perform actions that are relevant only at login. 
+
+.cshrc is used to set conditions and perform actions specific to the shell and to each invocation of it.
+
+
+set path = ($path ~/units174/bin)
+
+
+________________________________________________________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+							

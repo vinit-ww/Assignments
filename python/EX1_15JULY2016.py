@@ -1,0 +1,6 @@
+print "Hello! World"
+#print "Hello Again"
+print "Empty"
+print "Anything"
+print "I am Here"
+print "Where are you"

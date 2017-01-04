@@ -1,0 +1,82 @@
+<!--suppress XmlInvalidId -->
+{%extends 'shopify/base.html'%}
+{%block content%}
+{%include 'shopify/basic.html'%}
+<section id="form"><!--form-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-1">
+                <div class="login-form">
+                    <!--login form-->
+                    <h2>Login to your account</h2>
+                    <form id="login_form" method="post" action="{% url 'shopify:login'%}">
+                        {% csrf_token %}
+                        {{ user_form.non_field_errors }}
+                        <div class="fieldWrapper">
+                            {{ user_form.username.errors }}
+                            <label for="{{ user_form.username.id_for_label }}">Username</label>
+                            {{ user_form.username }}</div>
+                        <br/>
+                        {{ user_form.non_field_errors }}
+                        <div class="fieldWrapper">
+                            {{ user_form.password.errors }}
+                            <label for="{{ user_form.password.id_for_label }}">Password</label>
+                            {{ user_form.password }}</div>
+                        <br/>
+                        <label><input name="remember_me" id="remember" type="checkbox">Keep me logged in</label>
+                        <br />
+                        <input type="submit" value="submit" />
+                    </form>
+                </div><!--/login form-->
+            </div>
+            <div class="col-sm-1">
+                <h2 class="or">OR</h2>
+            </div>
+            <div class="col-sm-4">
+                <div class="signup-form"><!--sign up form-->
+                    <h2>New User Signup!</h2>
+                    {% if registered %}
+                    django says: <strong>thank you for registering!</strong>
+                    <a href="/">Return to the homepage.</a><br />
+                    {% else %}
+                    <form id="user_form" method="post" action="{% url 'shopify:register' %}"enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        <!-- Display each form. The as_p method wraps each element in a paragraph
+                             (<p>) element. This ensures each element appears on a new line,
+                             making everything look neater. -->
+                        {{ user_form.non_field_errors }}
+                        <div class="fieldWrapper">
+                            {{ user_form.username.errors }}
+                            <label for="{{ user_form.username.id_for_label }}">Username</label>
+                            {{ user_form.username }}
+                            {{ user_form.non_field_errors }}</div>
+                        <div class="fieldWrapper">
+                            {{ user_form.email.errors }}
+                            <label for="{{ user_form.email.id_for_label }}">Email</label>
+                            {{ user_form.email }}</div>
+                        {{ user_form.non_field_errors }}
+                        <div class="fieldWrapper">
+                            {{ user_form.password.errors }}
+                            <label for="{{ user_form.password.id_for_label }}">Password</label>
+                            {{ user_form.password }}</div>
+                        <div class="fieldWrapper">
+                            {{ profile_form.created_date.errors }}
+                            <label for="{{ profile_form.created_date.id_for_label }}">Date</label>
+                            {{ profile_form.created_date }}</div>
+
+                        <!--   {{ user_form.as_p }}
+                           {{ profile_form.as_p }}-->
+
+                        <!-- Provide a button to click to submit the form. -->
+                        <input type="submit" name="submit" value="Register" />
+                    </form>
+                    {% endif %}
+                </div><!--/sign up form-->
+            </div>
+        </div>
+    </div>
+</section><!--/form-->
+
+
+{%endblock content%}
